@@ -73,6 +73,7 @@ cat > .config/mise/config.toml <<MISE
     [tools]
     uv = "0.9.25"
     node = "24.13.0"
+    gh = "latest"
     "npm:@openai/codex" = "latest"
     "npm:@anthropic-ai/claude-code" = "latest"
     "npm:@google/gemini-cli" = "latest"
@@ -80,6 +81,8 @@ MISE
 
 touch .config/mise/mise.lock
 mise install
+
+gh extension install github/gh-copilot
 
 # Done provisioning, power off the VM
 systemctl poweroff
